@@ -4,7 +4,7 @@ import { Map } from "./components/map/map";
 import { Main } from './components/main/main'
 import { Header } from './components/header/header'
 
-const PAGES = ({ navigateTo })=>({
+const PAGES = (navigateTo)=>({
   map: <Map />,
   profile: <Profile />,
   main: <Main />,
