@@ -1,7 +1,7 @@
 import React from 'react'
 
-export const Button = (props) => {
+export const Button = ({ className, type, value, onClick }) => {
   return (
-    <button className={props.class}>{props.value}</button>
+    <button className={className} type={type} onClick={onClick}>{value}</button>
   )
 }

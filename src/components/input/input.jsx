@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const Input = (props) => {
+export const Input = ({value, id, className, name, placeholder, type}) => {
   return (
-    <input value={props.value} id={props.id} className={props.className} name={props.name} type ={props.type} />
+    <input value={value} id={id} className={className} name={name} placeholder={placeholder} type ={type} />
   )
 }
 

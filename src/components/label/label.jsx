@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const Label = (props) => {
+export const Label = ({htmlFor, className, value}) => {
 
   return (
-    <label htmlFor={props.htmlFor}>{props.value}</label>
+    <label htmlFor={htmlFor} className={className}>{value}</label>
   )
 }

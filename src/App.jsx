@@ -1,17 +1,13 @@
 import React from "react";
 import { Profile } from "./components/profile/profile";
 import { Map } from "./components/map/map";
-import { Main } from './components/main/main'
+import { Login } from './components/login/login'
 import { Header } from './components/header/header'
+import { Registration } from './components/registration/registration'
 
-const PAGES = (navigateTo)=>({
-  map: <Map />,
-  profile: <Profile />,
-  main: <Main />,
-});
 
 class App extends React.Component {
-  state = { currentPage: "main" };
+  state = { currentPage: "login" };
 
   navigateTo = (page) => {
     this.setState({ currentPage: page });
@@ -19,14 +15,17 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='container'>
-        {this.state.currentPage !== "main" && (
-          <Header navigate={this.navigateTo} />
-        )}
+      <>
+        <Header navigateTo={this.navigateTo} />
         <main data-testid="container">
-          <section>{PAGES(this.navigateTo)[this.state.currentPage]}</section>
+          <section>
+            {this.state.currentPage === 'login' && <Login navigateTo={this.navigateTo}/>}
+            {this.state.currentPage === 'map' && <Map />}
+            {this.state.currentPage === 'profile' && <Profile />}
+            {this.state.currentPage === 'registration' && <Registration />}
+          </section>
         </main>
-      </div>
+      </>
     );
   }
 }
